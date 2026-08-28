@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "onyx-gate-crewai"
+version = "0.1.0"
+description = "Onyx Gate for CrewAI — a verifiable authorization gate for crew tool calls: policy-decided allow/deny before a tool executes, with an audit trail you can re-check."
+readme = "README.md"
+license = { text = "Apache-2.0" }
+requires-python = ">=3.10"
+authors = [{ name = "The Onyx Foundry", email = "contact@onyxfoundry.ai" }]
+keywords = ["crewai", "agents", "authorization", "policy", "cedar", "guardrails", "audit"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: Apache Software License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Topic :: Security",
+]
+# The core (client + guard) is dependency-free by design; pydantic is only
+# needed by the CrewAI adapter, and crewai already brings it.
+dependencies = []
+
+[project.optional-dependencies]
+crewai = ["crewai>=0.80"]
+dev = ["pytest>=8"]
+
+[project.urls]
+Homepage = "https://onyxfoundry.ai"
+Repository = "https://github.com/jstewart-axyom/onyx-gate-crewai"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
