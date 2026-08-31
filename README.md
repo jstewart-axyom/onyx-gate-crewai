@@ -173,14 +173,14 @@ answer is not "the logs say so" but "re-derive it yourself, offline."
 ## Try it
 
 ```bash
-pip install "onyx-gate-crewai[crewai] @ git+https://github.com/jstewart-axyom/onyx-gate-crewai"
+pip install "onyx-gate-crewai[crewai] @ git+https://github.com/theonyxfoundry/onyx-gate-crewai"
 ```
 
 **Without the engine** — the test suite runs against a scripted stub gateway,
 so you can see the integration shape immediately:
 
 ```bash
-git clone https://github.com/jstewart-axyom/onyx-gate-crewai && cd onyx-gate-crewai
+git clone https://github.com/theonyxfoundry/onyx-gate-crewai && cd onyx-gate-crewai
 pip install -e '.[dev,crewai]' && pytest
 ```
 

@@ -32,7 +32,7 @@ dev = ["pytest>=8"]
 
 [project.urls]
 Homepage = "https://onyxfoundry.ai"
-Repository = "https://github.com/jstewart-axyom/onyx-gate-crewai"
+Repository = "https://github.com/theonyxfoundry/onyx-gate-crewai"
 
 [tool.setuptools.packages.find]
 where = ["src"]
