@@ -235,6 +235,17 @@ Running agents that touch money, records, or customers, and want the pilot
 shape you saw above (observe mode → measured would-denies → enforcement, with
 a re-checkable trail)? **contact@onyxfoundry.ai** · [onyxfoundry.ai](https://onyxfoundry.ai)
 
+## Supported gateway versions
+
+This client was written against Onyx gateways **≥ 0.2.0 and < 1.0.0** — the Onyx
+*product* version, which the gateway reports as `server.version` on `GET /ready`
+(since 0.2.0). The HTTP paths it speaks are stable, so this is a *soft* check:
+when a guard is built it reads the gateway's version once and emits a
+`RuntimeWarning` outside that range — never a refusal — so the two can be
+upgraded together. `ToolGuard(..., check_version=False)` skips the startup
+request; a gateway older than 0.2.0 reports no version and is treated as
+unknown (silent). `OnyxGate.server_info()` returns the block for your own logs.
+
 ## License
 
 [Apache-2.0](LICENSE). CrewAI is a trademark of its respective owner; this is
